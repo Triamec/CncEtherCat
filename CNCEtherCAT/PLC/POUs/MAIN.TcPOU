@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{99e0d0d8-73f4-4a0e-9efd-bf064104c456}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	PLCAxisEnable			: BOOL;
+	PLCStatusAxisEnabled 	: BOOL;	
+
+	Axis		: ARRAY [0..1] OF CNC_Axis; // CNC axis
+	Hli 		: MCV_HliInterface;
+	axisIdx		: UINT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* configuration *)
+Axis[0].config.driveId	:= 1001;				// Drive 1 (TSD)/EtherCAT/EtherCAT-Addr.
+Axis[0].config.netId	:= '192.168.10.99.2.1';	// Drive 1 (TSD)^InfoData^AdsAddr^netId
+Axis[0].config.axisNumber:= 0;					// first (0) or second (1) axis of a dual axis drive
+Axis[0].config.axisId	:= 0;					// cnc-axis-id used in events
+Axis[1].config.driveId	:= 1001;				// Drive 1 (TSD)/EtherCAT/EtherCAT-Addr.
+Axis[1].config.netId	:= '192.168.10.99.2.1';	// Drive 1 (TSD)^InfoData^AdsAddr^netId
+Axis[1].config.axisNumber:= 1;					// first (0) or second (1) axis of a dual axis drive
+Axis[1].config.axisId	:= 1;					// cnc-axis-id used in events
+
+(* HLI interface *)
+IF NOT Hli.Initialized THEN
+	Hli(); //initialize HLI
+END_IF
+
+(* Axis handler *)
+IF Hli.Initialized THEN
+	PLCStatusAxisEnabled := TRUE;
+	FOR axisIdx := 0 TO SIZEOF(Axis)/SIZEOF(Axis[0])-1 DO
+		Axis[axisIdx].enable := PLCAxisEnable;
+		Axis[axisIdx]();
+		IF NOT Axis[axisIdx].enabled THEN
+			PLCStatusAxisEnabled := FALSE;
+		END_IF
+	END_FOR
+END_IF
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="6" Count="7" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="19" Count="1" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="35" Count="2" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="22" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="CNC_Axis" Id="{82297f5e-40a9-41fb-a5ed-9ac0b914f41a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK CNC_Axis EXTENDS TE_AxisBase0
+VAR_INPUT
+	enable		: BOOL;
+	hold		: BOOL;
+END_VAR
+VAR_OUTPUT
+	ready		: BOOL;
+	enabled		: BOOL;
+	referenced	: BOOL;
+	state		: DWORD;
+	error		: BOOL;
+END_VAR
+VAR
+	pAxis		: POINTER TO HIGH_LEVEL_INTERFACE_AX;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Triamec Motion AG, 6340 Baar, Switzerland    *)
+(* Sample Code may be adapted to customer needs *)
+(* -------------------------------------------- *)
+(* 
+	we do not want any offset between drive and cnc 
+    because the drives have there own setPosition
+	therefore set the following parameters in the axis of the cnc:
+		kenngr.abs_pos_gueltig			1
+		kenngr.set_refpos_mode         	OFFSET
+		kenngr.set_refpos_offset		0
+	this mode ensures, that the cnc does not set cmdPos=actPos when
+	MCControlBoolUnit_SetReferencePosition is set
+	
+	To enable homing using G74 set the following in every axis configuration
+	kenngr.device_id  8             ( turn off the target reached check before homing)
+*)
+
+IF config.axisId >= 0 AND HLI_SYS_AX_MAXIDX > config.axisId THEN (* check for axis id *)
+	(* be careful, array indices start with 0 in TwinCAT 3. Axis starts with 1 *)
+	pAxis := gpAx[config.axisId];
+	pAxis^.head.plc_present_w := TRUE;
+	
+	(* enable PLC to drive HLI interface *)
+	pAxis^.lr_mc_control.torque_permission.enable_w			:= TRUE;
+	pAxis^.lr_mc_control.release_feedhold.enable_w 			:= TRUE;
+	pAxis^.lr_mc_control.drive_on.enable_w 					:= TRUE;		
+	(* set reference postion offset *)
+//	pAxis^.lr_mc_control.set_reference_position.enable_w	:= TRUE;
+	(* enable the axis to tracking operation (follow up) *)
+	pAxis^.lr_mc_control.follow_up.enable_w 				:= TRUE;
+
+	(* set regulation and feed *)
+	pAxis^.lr_mc_control.torque_permission.command_w		:= enable;
+	pAxis^.lr_mc_control.release_feedhold.command_w 		:= NOT Hold;
+	pAxis^.lr_mc_control.drive_on.command_w 				:= TRUE;
+	
+	state := pAxis^.lr_state.native_drive_state_r;
+	error := (state AND 16#8) <> 0;
+	
+	(* The axis is set to tracking operation (follow up) on or off, i.e. the control loop is opened.
+	   The command position implicitly is set to the actual position. *)
+	pAxis^.lr_mc_control.follow_up.command_w				:= (state AND 16#0100) <> 0;
+	(* HomingPosition *)
+//	pAxis^.lr_mc_control.set_reference_position.command_w	:= (driveState AND 16#8000) <> 0;
+	
+	ready := pAxis^.lr_state.ready_for_control_loop_on_r;
+	enabled := pAxis^.lr_state.ready_for_control_loop_on_r AND pAxis^.lr_state.ready_for_power_on_r AND pAxis^.lr_state.native_drive_state_r.1;
+	referenced := pAxis^.lr_state.homing_done_r;
+	
+END_IF
+
+(* This handles errors (error=TRUE) and warnings (error=FALSE) as TwinCat message *)
+CallSlow();]]></ST>
+    </Implementation>
+    <LineIds Name="CNC_Axis">
+      <LineId Id="41" Count="1" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="44" Count="11" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="59" Count="11" />
+      <LineId Id="58" Count="0" />
+      <LineId Id="72" Count="3" />
+      <LineId Id="77" Count="3" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="82" Count="1" />
+      <LineId Id="81" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
