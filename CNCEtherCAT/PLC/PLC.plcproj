@@ -18,6 +18,10 @@
     <LibraryReferences>{dd20e476-d72f-4193-bc9d-124885161359}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GVLs\Triamec_GVL.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>

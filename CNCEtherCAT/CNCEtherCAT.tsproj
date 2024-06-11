@@ -1977,15 +1977,36 @@ Ende
 		</Motion>
 		<Plc>
 			<Project GUID="{043DD10B-D68B-462D-A9D3-23A6E87B690A}" Name="PLC" PrjFilePath="PLC\PLC.plcproj" TmcFilePath="PLC\PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{F9773521-1047-B78E-2FB6-0C74060EB5E7}">
 					<Name>PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>MAIN.Axis[0].messageId</Name>
+							<Comment><![CDATA[ To be connected to IO/Inputs/messageId]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.Axis[1].messageId</Name>
+							<Comment><![CDATA[ To be connected to IO/Inputs/messageId]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+					</Vars>
 					<Contexts>
 						<Context>
-							<Id>1</Id>
-							<Name>Default</Name>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010030</OTCID>
+							</ManualConfig>
+							<Priority>20</Priority>
+							<CycleTime>10000000</CycleTime>
 						</Context>
 					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+					</TaskPouOids>
 				</Instance>
 			</Project>
 		</Plc>
@@ -2403,6 +2424,7 @@ Ende
 		</Io>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{1E95589C-63E6-7D9F-B42D-2897CA83703F}" Id="#x02030010"/>
 		<OwnerA Name="TICC^CNC^Axes^Axis_1">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Drive 1 (TSD)">
 				<Link VarA="Inputs^ActualPosition" VarB="Axis 0^MainInputs^ActualPosition"/>

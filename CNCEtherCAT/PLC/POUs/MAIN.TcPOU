@@ -3,9 +3,6 @@
   <POU Name="MAIN" Id="{99e0d0d8-73f4-4a0e-9efd-bf064104c456}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	PLCAxisEnable			: BOOL;
-	PLCStatusAxisEnabled 	: BOOL;	
-
 	Axis		: ARRAY [0..1] OF CNC_Axis; // CNC axis
 	Hli 		: MCV_HliInterface;
 	axisIdx		: UINT;
@@ -29,12 +26,12 @@ END_IF
 
 (* Axis handler *)
 IF Hli.Initialized THEN
-	PLCStatusAxisEnabled := TRUE;
+	gStatusAxesEnabled := TRUE;
 	FOR axisIdx := 0 TO SIZEOF(Axis)/SIZEOF(Axis[0])-1 DO
-		Axis[axisIdx].enable := PLCAxisEnable;
+		Axis[axisIdx].enable := gEnableAxes;
 		Axis[axisIdx]();
 		IF NOT Axis[axisIdx].enabled THEN
-			PLCStatusAxisEnabled := FALSE;
+			gStatusAxesEnabled := FALSE;
 		END_IF
 	END_FOR
 END_IF
