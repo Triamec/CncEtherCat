@@ -41,4 +41,8 @@ The following global variables have been defined to control and monitor the *Tri
 | `gEnableAxes`         | variable to enable all axes                |
 | `gStatusAxesEnabled`  | variable indicates that all axes enabled   |
 
+## CNC Axis Function Block (CNC_Axis)
+
+The function block extends *TE_AxisBase0* available in the *Triamec EtherCAT Lib* by the CNC specific interfaces.
+
 
