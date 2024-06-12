@@ -45,4 +45,18 @@ The following global variables have been defined to control and monitor the *Tri
 
 The function block extends *TE_AxisBase0* available in the *Triamec EtherCAT Lib* by the CNC specific interfaces.
 
+## Test the Example
+
+- **Save** and **Rebuild** the Solution.
+- **Activate** the configuration and set TwinCAT to *Run Mode*.
+- **Login** and **Start** the PLC.
+- Open *Triamec_GVL* and enable the axes by setting **gEnableAxes** to **TRUE**, check **gStatusAxesEnabled** if all axes are enabled.
+
+### Ready to move the axes
+
+You should now be able to control the axes over CNC Channel GUI (Online GUI).
+The control buttons are in the **MOTION > CNC > Axes > Channel_N > Online** dialog.
+
+![Online Dialog](./doc/OnlineDialog.png)
+
 
