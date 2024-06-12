@@ -18,3 +18,27 @@ The following prerequisites have to be met using this example code.
 - Drive commissioned. Checkout the *Servo Drive Setup Guide* from the [documents](https://www.triamec.com/en/documents.html) page.
 - All drives must be powered and connected to the EtherCAT-Master.
 
+## EtherCAT-Master Adapter
+Open adapter settings for the EtherCAT-Master in **I/O > Devices > Device 1 (EtherCAT) > Adapter**.
+
+Press **Search...** fo find the adapter on your system.
+
+![EtherCAT Master Adapter](./doc/EtherCATMaster.png)
+
+> [!NOTE]
+> Make sure, that TwinCAT is in **Config Mode** before you search the *EtherCAT Master* Adapter.
+
+## TwinCAT SYSTEM
+
+Make sure to use an isolated core on the TwinCAT PC. As each PC is different, ensure to set up the **SYSTEM > Real-Time > Settings** accordingly. 
+
+## Global Variable List (Triamec_GVL)
+
+The following global variables have been defined to control and monitor the *Tria-Link* bus and axes.
+
+| Variable              | Description                                |
+| --------------------- | ------------------------------------------ |
+| `gEnableAxes`         | variable to enable all axes                |
+| `gStatusAxesEnabled`  | variable indicates that all axes enabled   |
+
+
