@@ -11,11 +11,11 @@ END_VAR
     <Implementation>
       <ST><![CDATA[(* configuration *)
 Axis[0].config.driveId	:= 1001;				// Drive 1 (TSD)/EtherCAT/EtherCAT-Addr.
-Axis[0].config.netId	:= '192.168.10.99.2.1';	// Drive 1 (TSD)^InfoData^AdsAddr^netId
+Axis[0].config.netId	:= '10.20.34.98.2.1';	// Drive 1 (TSD)^InfoData^AdsAddr^netId
 Axis[0].config.axisNumber:= 0;					// first (0) or second (1) axis of a dual axis drive
 Axis[0].config.axisId	:= 0;					// cnc-axis-id used in events
 Axis[1].config.driveId	:= 1001;				// Drive 1 (TSD)/EtherCAT/EtherCAT-Addr.
-Axis[1].config.netId	:= '192.168.10.99.2.1';	// Drive 1 (TSD)^InfoData^AdsAddr^netId
+Axis[1].config.netId	:= '10.20.34.98.2.1';	// Drive 1 (TSD)^InfoData^AdsAddr^netId
 Axis[1].config.axisNumber:= 1;					// first (0) or second (1) axis of a dual axis drive
 Axis[1].config.axisId	:= 1;					// cnc-axis-id used in events
 

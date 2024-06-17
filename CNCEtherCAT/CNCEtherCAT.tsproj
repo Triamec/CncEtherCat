@@ -10,24 +10,14 @@
 				<Elements>1</Elements>
 			</ArrayInfo>
 		</DataType>
-		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000010}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..1] OF BYTE</Name>
-			<BitSize>16</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
-			<ArrayInfo>
-				<LBound>0</LBound>
-				<Elements>2</Elements>
-			</ArrayInfo>
-		</DataType>
 	</DataTypes>
 	<ImageDatas>
 		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff000000ff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c08080800000ff000000000000000000000000000000000000000000ff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c08080800000ff0000000000000000000000000000000000000000000000ff0000ffff00ffc0c0c0c0c0c0ff0000c0c0c08080800000ff000000000000000000000000000000000000000000ff00ffff00ffff00ffc0c0c0ff0000ff0000ff00008080800000ffff00ffff00ffff00ff000000ff00ffff00ff000000ff00ffff00ffff00ffc0c0c0c0c0c0ff0000c0c0c0808080000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0ff0000c0c0c0808080000000ff00ffff00ffff00ffff00ffff00ffff00ff000000ff00ffff00ffff00ffc0c0c0c0c0c0ff0000c0c0c0808080000000000000000000000000000000000000000000000000ff00ffff00ffff00ffc0c0c0c0c0c0ff0000c0c0c08080800000000000000000000000000000000000000000000000000000ff0000ffff00ffc0c0c0c0c0c0ff0000c0c0c0808080000000000000000000000000000000000000000000000000ff00ffff00ffff00ffc0c0c0c0c0c0ff0000c0c0c0808080000000ff00ffff00ffff00ff000000ff00ffff00ff000000ff00ffff00ffff00ffc0c0c0c0c0c0ff0000c0c0c0808080000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080000000ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080</ImageData>
-		<ImageData Id="1001">424dd6020000000000003600000028000000100000000e0000000100180000000000a002000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff000000ff00ffff00ffff00ffff0000ff0000ff0000ff0000808080ff00ff000000000000000000000000000000000000000000ff00ffff00ffff00ffff0000c0c0c0c0c0c0c0c0c0808080ff00ff0000000000000000000000000000000000000000000000ff0000ffff00ffc0c0c0ff0000c0c0c0c0c0c0808080ff00ff000000000000000000000000000000000000000000ff00ffff00ffff00ffc0c0c0c0c0c0ff0000c0c0c0808080ff00ffff00ffff00ffff00ff000000ff00ffff00ff000000ff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0ff0000808080ff00ff000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ffff0000c0c0c0c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0ff0000ff0000c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ff</ImageData>
 	</ImageDatas>
 	<Project ProjectGUID="{6E334367-D73B-48CC-B026-924156AE9FB7}" Target64Bit="true" ShowHideConfigurations="#x6">
 		<System>
-			<Settings>
-				<Cpu BaseTime="2000"/>
+			<Settings MaxCpus="20" NonWinCpus="1">
+				<Cpu CpuId="19" BaseTime="2000"/>
 			</Settings>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
@@ -44,7 +34,7 @@
 				<SdaTask Priority="8" CycleTime="100000" AmsPort="555" AdtTasks="true">
 					<Name>CNC-Task SDA</Name>
 				</SdaTask>
-				<ComTask Priority="13" CycleTime="100000" AmsPort="556" AdtTasks="true">
+				<ComTask Priority="13" CycleTime="10000" AmsPort="556" AdtTasks="true">
 					<Name>CNC-Task COM</Name>
 				</ComTask>
 				<Data Name="Startup"><![CDATA[# *****************************************
@@ -660,19 +650,14 @@ Ende
 							<BitOffs>88</BitOffs>
 						</Var>
 						<Var>
-							<Name>TorqueActual</Name>
-							<Type>INT</Type>
-							<BitOffs>120</BitOffs>
-						</Var>
-						<Var>
 							<Name>MessageId</Name>
 							<Type>UINT</Type>
-							<BitOffs>136</BitOffs>
+							<BitOffs>120</BitOffs>
 						</Var>
 						<Var>
 							<Name>WcState</Name>
 							<Type>UINT</Type>
-							<BitOffs>152</BitOffs>
+							<BitOffs>136</BitOffs>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
@@ -687,24 +672,14 @@ Ende
 							<BitOffs>16</BitOffs>
 						</Var>
 						<Var>
-							<Name>Auxiliary Byte</Name>
-							<Type>USINT</Type>
-							<BitOffs>24</BitOffs>
-						</Var>
-						<Var>
 							<Name>TargetPosition</Name>
 							<Type>DINT</Type>
-							<BitOffs>32</BitOffs>
+							<BitOffs>24</BitOffs>
 						</Var>
 						<Var>
 							<Name>TargetVelocity</Name>
 							<Type>DINT</Type>
-							<BitOffs>64</BitOffs>
-						</Var>
-						<Var>
-							<Name>TargetTorque</Name>
-							<Type>INT</Type>
-							<BitOffs>96</BitOffs>
+							<BitOffs>56</BitOffs>
 						</Var>
 					</Vars>
 					<ChnInfoIn Length="2" Reference="DRIVE_STATUS"/>
@@ -712,15 +687,12 @@ Ende
 					<ChnInfoIn Length="4" Reference="POS_ACT"/>
 					<ChnInfoIn Length="4" Reference="FOLLOW_ERR"/>
 					<ChnInfoIn Length="4" Reference="606C_00"/>
-					<ChnInfoIn Length="2" Reference="TORQUE_ACT"/>
 					<ChnInfoIn Length="2" Reference="603F_00"/>
 					<ChnInfoIn Length="2" Reference="WCSTATE"/>
 					<ChnInfoOut Length="2" Reference="DRIVE_CTRL"/>
 					<ChnInfoOut Length="1" Reference="6060_00"/>
-					<ChnInfoOut Length="1" Reference="60FD_00"/>
 					<ChnInfoOut Length="4" Reference="POS_NOM"/>
 					<ChnInfoOut Length="4" Reference="VELO_NOM"/>
-					<ChnInfoOut Length="2" Reference="6071_00"/>
 					<Data Name="Parameter" Offset="9"><![CDATA[# ****************************************
 #
 #TC_AXIS_DESC:    Axis Parameter
@@ -749,13 +721,10 @@ antr.canopen.in[4].signal_len                            4
 antr.canopen.in[4].nc_ref                                606C_00
 antr.canopen.in[5].signal_nr                             0
 antr.canopen.in[5].signal_len                            2
-antr.canopen.in[5].nc_ref                                TORQUE_ACT
+antr.canopen.in[5].nc_ref                                603F_00
 antr.canopen.in[6].signal_nr                             0
 antr.canopen.in[6].signal_len                            2
-antr.canopen.in[6].nc_ref                                603F_00
-antr.canopen.in[7].signal_nr                             0
-antr.canopen.in[7].signal_len                            2
-antr.canopen.in[7].nc_ref                                WCSTATE
+antr.canopen.in[6].nc_ref                                WCSTATE
 antr.canopen.out[0].signal_nr                             0
 antr.canopen.out[0].signal_len                            2
 antr.canopen.out[0].nc_ref                                DRIVE_CTRL
@@ -763,23 +732,17 @@ antr.canopen.out[1].signal_nr                             0
 antr.canopen.out[1].signal_len                            1
 antr.canopen.out[1].nc_ref                                6060_00
 antr.canopen.out[2].signal_nr                             0
-antr.canopen.out[2].signal_len                            1
-antr.canopen.out[2].nc_ref                                60FD_00
+antr.canopen.out[2].signal_len                            4
+antr.canopen.out[2].nc_ref                                POS_NOM
 antr.canopen.out[3].signal_nr                             0
 antr.canopen.out[3].signal_len                            4
-antr.canopen.out[3].nc_ref                                POS_NOM
-antr.canopen.out[4].signal_nr                             0
-antr.canopen.out[4].signal_len                            4
-antr.canopen.out[4].nc_ref                                VELO_NOM
-antr.canopen.out[5].signal_nr                             0
-antr.canopen.out[5].signal_len                            2
-antr.canopen.out[5].nc_ref                                6071_00
+antr.canopen.out[3].nc_ref                                VELO_NOM
 twincat.device.id                                            1
 twincat.box.ads_port                                         1001
 twincat.box.ads_netid                                        10.20.34.98.2.1
 twincat.box.channel                                          0
-twincat.box.dc_input_shift                                   325980
-twincat.box.dc_output_shift                                  74020
+twincat.box.dc_input_shift                                   326620
+twincat.box.dc_output_shift                                  73380
 #
 kenngr.nocken_laenge                                  0             ( P-AXIS-00133 : Cam length , not used
 kenngr.virtuel_rad                                    0             ( P-AXIS-00222 : Virtual radius , not used
@@ -1040,42 +1003,37 @@ Ende
 						<Var>
 							<Name>Status Word</Name>
 							<Type>UINT</Type>
-							<BitOffs>192</BitOffs>
+							<BitOffs>160</BitOffs>
 						</Var>
 						<Var>
 							<Name>Mode of Operation Display</Name>
 							<Type>SINT</Type>
-							<BitOffs>208</BitOffs>
+							<BitOffs>176</BitOffs>
 						</Var>
 						<Var>
 							<Name>ActualPosition</Name>
 							<Type>DINT</Type>
-							<BitOffs>216</BitOffs>
+							<BitOffs>184</BitOffs>
 						</Var>
 						<Var>
 							<Name>PositionError</Name>
 							<Type>DINT</Type>
-							<BitOffs>248</BitOffs>
+							<BitOffs>216</BitOffs>
 						</Var>
 						<Var>
 							<Name>ActualVelocity</Name>
 							<Type>DINT</Type>
-							<BitOffs>280</BitOffs>
-						</Var>
-						<Var>
-							<Name>TorqueActual</Name>
-							<Type>INT</Type>
-							<BitOffs>312</BitOffs>
+							<BitOffs>248</BitOffs>
 						</Var>
 						<Var>
 							<Name>MessageId</Name>
 							<Type>UINT</Type>
-							<BitOffs>328</BitOffs>
+							<BitOffs>280</BitOffs>
 						</Var>
 						<Var>
 							<Name>WcState</Name>
 							<Type>UINT</Type>
-							<BitOffs>344</BitOffs>
+							<BitOffs>296</BitOffs>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
@@ -1083,32 +1041,22 @@ Ende
 						<Var>
 							<Name>Control Word</Name>
 							<Type>UINT</Type>
-							<BitOffs>128</BitOffs>
+							<BitOffs>96</BitOffs>
 						</Var>
 						<Var>
 							<Name>Mode of Operation</Name>
 							<Type>SINT</Type>
-							<BitOffs>144</BitOffs>
-						</Var>
-						<Var>
-							<Name>Auxiliary Byte</Name>
-							<Type>USINT</Type>
-							<BitOffs>152</BitOffs>
+							<BitOffs>112</BitOffs>
 						</Var>
 						<Var>
 							<Name>TargetPosition</Name>
 							<Type>DINT</Type>
-							<BitOffs>160</BitOffs>
+							<BitOffs>120</BitOffs>
 						</Var>
 						<Var>
 							<Name>TargetVelocity</Name>
 							<Type>DINT</Type>
-							<BitOffs>192</BitOffs>
-						</Var>
-						<Var>
-							<Name>TargetTorque</Name>
-							<Type>INT</Type>
-							<BitOffs>224</BitOffs>
+							<BitOffs>152</BitOffs>
 						</Var>
 					</Vars>
 					<ChnInfoIn Length="2" Reference="DRIVE_STATUS"/>
@@ -1116,15 +1064,12 @@ Ende
 					<ChnInfoIn Length="4" Reference="POS_ACT"/>
 					<ChnInfoIn Length="4" Reference="FOLLOW_ERR"/>
 					<ChnInfoIn Length="4" Reference="686C_00"/>
-					<ChnInfoIn Length="2" Reference="TORQUE_ACT"/>
 					<ChnInfoIn Length="2" Reference="683F_00"/>
 					<ChnInfoIn Length="2" Reference="WCSTATE"/>
 					<ChnInfoOut Length="2" Reference="DRIVE_CTRL"/>
 					<ChnInfoOut Length="1" Reference="6860_00"/>
-					<ChnInfoOut Length="1" Reference="68FD_00"/>
 					<ChnInfoOut Length="4" Reference="POS_NOM"/>
 					<ChnInfoOut Length="4" Reference="VELO_NOM"/>
-					<ChnInfoOut Length="2" Reference="6871_00"/>
 					<Data Name="Parameter" Offset="10"><![CDATA[# ****************************************
 #
 #TC_AXIS_DESC:    Axis Parameter
@@ -1134,8 +1079,8 @@ Ende
 kopf.achs_nr                                          2
 kopf.mds_ident                                        1             ( P-AXIS-00110 : Identification of axis data 
 kopf.log_achs_name                                           Axis_2
-antr.addroffs.input                                          24
-antr.addroffs.output                                         16
+antr.addroffs.input                                          20
+antr.addroffs.output                                         12
 antr.canopen.in[0].signal_nr                             0
 antr.canopen.in[0].signal_len                            2
 antr.canopen.in[0].nc_ref                                DRIVE_STATUS
@@ -1153,13 +1098,10 @@ antr.canopen.in[4].signal_len                            4
 antr.canopen.in[4].nc_ref                                686C_00
 antr.canopen.in[5].signal_nr                             0
 antr.canopen.in[5].signal_len                            2
-antr.canopen.in[5].nc_ref                                TORQUE_ACT
+antr.canopen.in[5].nc_ref                                683F_00
 antr.canopen.in[6].signal_nr                             0
 antr.canopen.in[6].signal_len                            2
-antr.canopen.in[6].nc_ref                                683F_00
-antr.canopen.in[7].signal_nr                             0
-antr.canopen.in[7].signal_len                            2
-antr.canopen.in[7].nc_ref                                WCSTATE
+antr.canopen.in[6].nc_ref                                WCSTATE
 antr.canopen.out[0].signal_nr                             0
 antr.canopen.out[0].signal_len                            2
 antr.canopen.out[0].nc_ref                                DRIVE_CTRL
@@ -1167,23 +1109,17 @@ antr.canopen.out[1].signal_nr                             0
 antr.canopen.out[1].signal_len                            1
 antr.canopen.out[1].nc_ref                                6860_00
 antr.canopen.out[2].signal_nr                             0
-antr.canopen.out[2].signal_len                            1
-antr.canopen.out[2].nc_ref                                68FD_00
+antr.canopen.out[2].signal_len                            4
+antr.canopen.out[2].nc_ref                                POS_NOM
 antr.canopen.out[3].signal_nr                             0
 antr.canopen.out[3].signal_len                            4
-antr.canopen.out[3].nc_ref                                POS_NOM
-antr.canopen.out[4].signal_nr                             0
-antr.canopen.out[4].signal_len                            4
-antr.canopen.out[4].nc_ref                                VELO_NOM
-antr.canopen.out[5].signal_nr                             0
-antr.canopen.out[5].signal_len                            2
-antr.canopen.out[5].nc_ref                                6871_00
+antr.canopen.out[3].nc_ref                                VELO_NOM
 twincat.device.id                                            1
 twincat.box.ads_port                                         1001
 twincat.box.ads_netid                                        10.20.34.98.2.1
 twincat.box.channel                                          1
-twincat.box.dc_input_shift                                   325980
-twincat.box.dc_output_shift                                  74020
+twincat.box.dc_input_shift                                   326620
+twincat.box.dc_output_shift                                  73380
 #
 kenngr.nocken_laenge                                  0             ( P-AXIS-00133 : Cam length , not used
 kenngr.virtuel_rad                                    0             ( P-AXIS-00222 : Virtual radius , not used
@@ -1977,7 +1913,7 @@ Ende
 		</Motion>
 		<Plc>
 			<Project GUID="{043DD10B-D68B-462D-A9D3-23A6E87B690A}" Name="PLC" PrjFilePath="PLC\PLC.plcproj" TmcFilePath="PLC\PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{F9773521-1047-B78E-2FB6-0C74060EB5E7}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{13291033-6766-F28E-AA59-83E6180CBBAE}">
 					<Name>PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -2011,7 +1947,7 @@ Ende
 			</Project>
 		</Plc>
 		<Io>
-			<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="10.20.34.98.2.1" RemoteName="Device 1 (EtherCAT)" InfoImageId="2">
+			<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="10.20.34.98.2.1" RemoteName="Device 1 (EtherCAT)" InfoImageId="3">
 				<Name>Device 1 (EtherCAT)</Name>
 				<AddressInfo>
 					<Pnp>
@@ -2029,8 +1965,8 @@ Ende
 					<EtherCAT SlaveType="2" PdiType="#x0c80" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="15" VendorId="#x0000abba" ProductCode="#x00000171" RevisionNo="#x00000004" InfoDataAddr="true" InfoDataSoeDS401="true" InfoDataDcTimes="true" TimeoutStateChange1="2000" TimeoutStateChange2="9000" TimeoutMailbox2="2000" PortPhys="17" IdentificationAdo="308" DownloadSlotCfgIP="true" MaxSlotCount="24" MaxSlotGroupCount="5" Type="TSD_minFW4.22" Desc="TSD" PortABoxInfo="#x00ffffff">
 						<SyncMan>001080002600010001000000220080008000001026010000</SyncMan>
 						<SyncMan>801080002200010002000000220080008000801022010000</SyncMan>
-						<SyncMan>001120006400010003000000000000002000001164010000</SyncMan>
-						<SyncMan>001430002000010004000000000000003000001420010000</SyncMan>
+						<SyncMan>001118006400010003000000000000002000001164010000</SyncMan>
+						<SyncMan>001428002000010004000000000000003000001420010000</SyncMan>
 						<Fmmu>0000000000000000001100020100000001000000000000000000000000000000</Fmmu>
 						<Fmmu>0000000000000000001400010100000002000000000000000000000000000000</Fmmu>
 						<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
@@ -2089,9 +2025,9 @@ Ende
 								<Type>SINT</Type>
 								<Comment><![CDATA[object 0x6060:0]]></Comment>
 							</Entry>
-							<Entry Name="Auxiliary Byte" Index="#x60fd" Flags="#x00002000">
+							<Entry Name="Auxiliary Byte" Index="#x2098" Flags="#x00002000">
 								<Type>USINT</Type>
-								<Comment><![CDATA[object 0x60FD:0, mapped to Axes[..]/Commands/General/ExternalInput]]></Comment>
+								<Comment><![CDATA[object 0x2098:0, mapped to Axes[..]/Commands/General/ExternalInput]]></Comment>
 							</Entry>
 						</Pdo>
 						<Pdo Name="PositionInputs" Index="#x1a07" Flags="#x0490" SyncMan="3">
@@ -2116,24 +2052,6 @@ Ende
 							<Entry Name="TargetVelocity" Index="#x60ff" Flags="#x00002000">
 								<Type>DINT</Type>
 								<Comment><![CDATA[object 0x60FF:0]]></Comment>
-							</Entry>
-						</Pdo>
-						<Pdo Name="TorqueInputs" Index="#x1a09" Flags="#x0490" SyncMan="3">
-							<Entry Name="TorqueActual" Index="#x6077" Flags="#x00002000">
-								<Type>INT</Type>
-								<Comment><![CDATA[object 0x6077:0]]></Comment>
-							</Entry>
-							<Entry>
-								<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
-							</Entry>
-						</Pdo>
-						<Pdo Name="TorqueOutputs" Index="#x1609" InOut="1" Flags="#x0490" SyncMan="2">
-							<Entry Name="TargetTorque" Index="#x6071" Flags="#x00002000">
-								<Type>INT</Type>
-								<Comment><![CDATA[object 0x6071:0]]></Comment>
-							</Entry>
-							<Entry>
-								<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
 							</Entry>
 						</Pdo>
 						<Pdo Name="Diagnostic / Digital Inputs" Index="#x1a0a" Flags="#x0490" SyncMan="3">
@@ -2196,9 +2114,9 @@ Ende
 								<Type>SINT</Type>
 								<Comment><![CDATA[object 0x6060:0]]></Comment>
 							</Entry>
-							<Entry Name="Auxiliary Byte" Index="#x68fd" Flags="#x00002000">
+							<Entry Name="Auxiliary Byte" Index="#x2898" Flags="#x00002000">
 								<Type>USINT</Type>
-								<Comment><![CDATA[object 0x60FD:0, mapped to Axes[..]/Commands/General/ExternalInput]]></Comment>
+								<Comment><![CDATA[object 0x2098:0, mapped to Axes[..]/Commands/General/ExternalInput]]></Comment>
 							</Entry>
 						</Pdo>
 						<Pdo Name="PositionInputs" Index="#x1a17" Flags="#x0490" SyncMan="3">
@@ -2225,24 +2143,6 @@ Ende
 								<Comment><![CDATA[object 0x60FF:0]]></Comment>
 							</Entry>
 						</Pdo>
-						<Pdo Name="TorqueInputs" Index="#x1a19" Flags="#x0490" SyncMan="3">
-							<Entry Name="TorqueActual" Index="#x6877" Flags="#x00002000">
-								<Type>INT</Type>
-								<Comment><![CDATA[object 0x6077:0]]></Comment>
-							</Entry>
-							<Entry>
-								<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
-							</Entry>
-						</Pdo>
-						<Pdo Name="TorqueOutputs" Index="#x1619" InOut="1" Flags="#x0490" SyncMan="2">
-							<Entry Name="TargetTorque" Index="#x6871" Flags="#x00002000">
-								<Type>INT</Type>
-								<Comment><![CDATA[object 0x6071:0]]></Comment>
-							</Entry>
-							<Entry>
-								<Type GUID="{18071995-0000-0000-0000-002000000010}">ARRAY [0..1] OF BYTE</Type>
-							</Entry>
-						</Pdo>
 						<Pdo Name="Diagnostic / Digital Inputs" Index="#x1a1a" Flags="#x0490" SyncMan="3">
 							<Entry Name="DigitalInputs" Index="#x2a9c" Flags="#x00002000">
 								<Type>UINT</Type>
@@ -2260,7 +2160,7 @@ Ende
 							<ModuleIdent>5347328</ModuleIdent>
 							<Module Id="#x03090001" Type="MainControl" Class="">
 								<Name>Axis 0</Name>
-								<ImageId>482</ImageId>
+								<ImageId>405</ImageId>
 								<ModuleData>baab000000985100000004000000000000000000000000000000000000000000</ModuleData>
 								<PdoIndex>6662</PdoIndex>
 								<PdoIndex>5638</PdoIndex>
@@ -2271,7 +2171,7 @@ Ende
 							<ModuleIdent>5347329</ModuleIdent>
 							<Module Id="#x03090002" Type="Position" Class="">
 								<Name>Axis 0</Name>
-								<ImageId>482</ImageId>
+								<ImageId>405</ImageId>
 								<ModuleData>baab000001985100000004000000000000000000000000000000000000000000</ModuleData>
 								<PdoIndex>6663</PdoIndex>
 								<PdoIndex>5639</PdoIndex>
@@ -2282,7 +2182,7 @@ Ende
 							<ModuleIdent>5347330</ModuleIdent>
 							<Module Id="#x03090003" Type="Velocity" Class="">
 								<Name>Axis 0</Name>
-								<ImageId>482</ImageId>
+								<ImageId>405</ImageId>
 								<ModuleData>baab000002985100000004000000000000000000000000000000000000000000</ModuleData>
 								<PdoIndex>6664</PdoIndex>
 								<PdoIndex>5640</PdoIndex>
@@ -2291,20 +2191,13 @@ Ende
 						<Slot Name="Torque">
 							<SlotData>0000000001000600000010000800000800000000000000000000000000000000</SlotData>
 							<ModuleIdent>5347331</ModuleIdent>
-							<Module Id="#x03090004" Type="Torque" Class="">
-								<Name>Axis 0</Name>
-								<ImageId>482</ImageId>
-								<ModuleData>baab000003985100000004000000000000000000000000000000000000000000</ModuleData>
-								<PdoIndex>6665</PdoIndex>
-								<PdoIndex>5641</PdoIndex>
-							</Module>
 						</Slot>
 						<Slot Name="Diagnostic / IO">
 							<SlotData>0000000001000600000010000800000800000000000000000000000000000000</SlotData>
 							<ModuleIdent>5347332</ModuleIdent>
-							<Module Id="#x03090005" Type="Diagnostic / DigitalInputs" Class="">
+							<Module Id="#x03090004" Type="Diagnostic / DigitalInputs" Class="">
 								<Name>Axis 0</Name>
-								<ImageId>482</ImageId>
+								<ImageId>405</ImageId>
 								<ModuleData>baab000004985100000004000000000000000000000000000000000000000000</ModuleData>
 								<PdoIndex>6666</PdoIndex>
 							</Module>
@@ -2316,9 +2209,9 @@ Ende
 						<Slot Name="Main Control">
 							<SlotData>0100010001000600000010000800000800000000000000000000000000000000</SlotData>
 							<ModuleIdent>5347328</ModuleIdent>
-							<Module Id="#x03090006" Type="MainControl" Class="">
+							<Module Id="#x03090005" Type="MainControl" Class="">
 								<Name>Axis 1</Name>
-								<ImageId>482</ImageId>
+								<ImageId>405</ImageId>
 								<ModuleData>baab000000985100000004000000000000000000000000000000000000000000</ModuleData>
 								<PdoIndex>6678</PdoIndex>
 								<PdoIndex>5654</PdoIndex>
@@ -2327,9 +2220,9 @@ Ende
 						<Slot Name="Position">
 							<SlotData>0100000001000600000010000800000800000000000000000000000000000000</SlotData>
 							<ModuleIdent>5347329</ModuleIdent>
-							<Module Id="#x03090007" Type="Position" Class="">
+							<Module Id="#x03090006" Type="Position" Class="">
 								<Name>Axis 1</Name>
-								<ImageId>482</ImageId>
+								<ImageId>405</ImageId>
 								<ModuleData>baab000001985100000004000000000000000000000000000000000000000000</ModuleData>
 								<PdoIndex>6679</PdoIndex>
 								<PdoIndex>5655</PdoIndex>
@@ -2338,9 +2231,9 @@ Ende
 						<Slot Name="Velocity">
 							<SlotData>0100000001000600000010000800000800000000000000000000000000000000</SlotData>
 							<ModuleIdent>5347330</ModuleIdent>
-							<Module Id="#x03090008" Type="Velocity" Class="">
+							<Module Id="#x03090007" Type="Velocity" Class="">
 								<Name>Axis 1</Name>
-								<ImageId>482</ImageId>
+								<ImageId>405</ImageId>
 								<ModuleData>baab000002985100000004000000000000000000000000000000000000000000</ModuleData>
 								<PdoIndex>6680</PdoIndex>
 								<PdoIndex>5656</PdoIndex>
@@ -2349,20 +2242,13 @@ Ende
 						<Slot Name="Torque">
 							<SlotData>0100000001000600000010000800000800000000000000000000000000000000</SlotData>
 							<ModuleIdent>5347331</ModuleIdent>
-							<Module Id="#x03090009" Type="Torque" Class="">
-								<Name>Axis 1</Name>
-								<ImageId>482</ImageId>
-								<ModuleData>baab000003985100000004000000000000000000000000000000000000000000</ModuleData>
-								<PdoIndex>6681</PdoIndex>
-								<PdoIndex>5657</PdoIndex>
-							</Module>
 						</Slot>
 						<Slot Name="Diagnostic / Digital Inputs">
 							<SlotData>0100000001000600000010000800000800000000000000000000000000000000</SlotData>
 							<ModuleIdent>5347332</ModuleIdent>
-							<Module Id="#x0309000a" Type="Diagnostic / DigitalInputs" Class="">
+							<Module Id="#x03090008" Type="Diagnostic / DigitalInputs" Class="">
 								<Name>Axis 1</Name>
-								<ImageId>482</ImageId>
+								<ImageId>405</ImageId>
 								<ModuleData>baab000004985100000004000000000000000000000000000000000000000000</ModuleData>
 								<PdoIndex>6682</PdoIndex>
 							</Module>
@@ -2399,22 +2285,22 @@ Ende
 							<ModuleIdent>10552320</ModuleIdent>
 							<ModuleIdent>10552576</ModuleIdent>
 						</Slot>
-						<SlotGroupData Name="Axis 0" ImageId="1001">
+						<SlotGroupData Name="Axis 0" ImageId="1000">
 							<SlotGroup>0</SlotGroup>
 						</SlotGroupData>
-						<SlotGroupData Name="Axis 1" ImageId="1001">
+						<SlotGroupData Name="Axis 1" ImageId="1000">
 							<SlotGroup>1</SlotGroup>
 						</SlotGroupData>
-						<SlotGroupData Name="Extension 0" ImageId="1001">
+						<SlotGroupData Name="Extension 0" ImageId="1000">
 							<SlotGroup>2</SlotGroup>
 						</SlotGroupData>
-						<SlotGroupData Name="Extension 1" ImageId="1001">
+						<SlotGroupData Name="Extension 1" ImageId="1000">
 							<SlotGroup>3</SlotGroup>
 						</SlotGroupData>
-						<SlotGroupData Name="Extension 2" ImageId="1001">
+						<SlotGroupData Name="Extension 2" ImageId="1000">
 							<SlotGroup>4</SlotGroup>
 						</SlotGroupData>
-						<SlotGroupData Name="Extension 3" ImageId="1001">
+						<SlotGroupData Name="Extension 3" ImageId="1000">
 							<SlotGroup>5</SlotGroup>
 						</SlotGroupData>
 					</EtherCAT>
@@ -2433,13 +2319,10 @@ Ende
 				<Link VarA="Inputs^Mode of Operation Display" VarB="Axis 0^MainInputs^Mode of Operation Display"/>
 				<Link VarA="Inputs^PositionError" VarB="Axis 0^PositionInputs^PositionError"/>
 				<Link VarA="Inputs^Status Word" VarB="Axis 0^MainInputs^Status Word"/>
-				<Link VarA="Inputs^TorqueActual" VarB="Axis 0^TorqueInputs^TorqueActual"/>
 				<Link VarA="Inputs^WcState" VarB="WcState^WcState"/>
-				<Link VarA="Outputs^Auxiliary Byte" VarB="Axis 0^MainOutputs^Auxiliary Byte"/>
 				<Link VarA="Outputs^Control Word" VarB="Axis 0^MainOutputs^Control Word"/>
 				<Link VarA="Outputs^Mode of Operation" VarB="Axis 0^MainOutputs^Mode of Operation"/>
 				<Link VarA="Outputs^TargetPosition" VarB="Axis 0^PositionOutputs^TargetPosition"/>
-				<Link VarA="Outputs^TargetTorque" VarB="Axis 0^TorqueOutputs^TargetTorque"/>
 				<Link VarA="Outputs^TargetVelocity" VarB="Axis 0^VelocityOutputs^TargetVelocity"/>
 			</OwnerB>
 		</OwnerA>
@@ -2451,13 +2334,10 @@ Ende
 				<Link VarA="Inputs^Mode of Operation Display" VarB="Axis 1^MainInputs^Mode of Operation Display"/>
 				<Link VarA="Inputs^PositionError" VarB="Axis 1^PositionInputs^PositionError"/>
 				<Link VarA="Inputs^Status Word" VarB="Axis 1^MainInputs^Status Word"/>
-				<Link VarA="Inputs^TorqueActual" VarB="Axis 1^TorqueInputs^TorqueActual"/>
 				<Link VarA="Inputs^WcState" VarB="WcState^WcState"/>
-				<Link VarA="Outputs^Auxiliary Byte" VarB="Axis 1^MainOutputs^Auxiliary Byte"/>
 				<Link VarA="Outputs^Control Word" VarB="Axis 1^MainOutputs^Control Word"/>
 				<Link VarA="Outputs^Mode of Operation" VarB="Axis 1^MainOutputs^Mode of Operation"/>
 				<Link VarA="Outputs^TargetPosition" VarB="Axis 1^PositionOutputs^TargetPosition"/>
-				<Link VarA="Outputs^TargetTorque" VarB="Axis 1^TorqueOutputs^TargetTorque"/>
 				<Link VarA="Outputs^TargetVelocity" VarB="Axis 1^VelocityOutputs^TargetVelocity"/>
 			</OwnerB>
 		</OwnerA>
