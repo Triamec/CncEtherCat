@@ -34,7 +34,7 @@ Make sure to use an isolated core on the TwinCAT PC. As each PC is different, en
 
 ## Global Variable List (Triamec_GVL)
 
-The following global variables have been defined to control and monitor the *Tria-Link* bus and axes.
+The following global variables have been defined to control and monitor the axes.
 
 | Variable              | Description                                |
 | --------------------- | ------------------------------------------ |
